@@ -54,22 +54,50 @@ async function getWCDataTypeAmount(type) {
 * @autor : Romain
 */
 
-let dataTypeAmountUrinal;
-let dataTypeAmountAutomatic;
-let dataTypeAmountCottage;
-
 async function fetchData() {
     try {
-        dataTypeAmountUrinal = await getWCDataTypeAmount("URINOIR");
-        dataTypeAmountAutomatic = await getWCDataTypeAmount("SANITAIRE_AUTOMATIQUE");
-        dataTypeAmountCottage = await getWCDataTypeAmount("CHALET_DE_NECESSITE");
 
-        // Set the variable to true when all data is loaded
-        dataLoaded = true;
+        let urinalData = await getWCDataTypeAmount("URINOIR");
+        let wCDataTypeAmount = await getWCDataTypeAmount("SANITAIRE_AUTOMATIQUE");
+        let cottageData = await getWCDataTypeAmount("CHALET_DE_NECESSITE");
+
+        let totalData = urinalData + wCDataTypeAmount + cottageData;
+
+        updateCounter("urinalData", urinalData);
+        updateCounter("wcAutoData", wCDataTypeAmount);
+        updateCounter("cottageData", cottageData);
+        updateCounter("totalData", totalData);
+
     } catch (error) {
         console.error('There was an error fetching data:', error);
     }
 }
 
-let dataLoaded = false;
 fetchData();
+
+/* 
+* Print data in HTML
+* @function updateCounter
+* @param {string} elementId
+* @param {integer} finalAmount
+* @autor : Romain
+*/
+
+async function updateCounter(elementId, finalAmount) {
+    const element = document.getElementById(elementId);
+    const duration = 2000; // 2 secondes
+    const interval = 50; // 50 millisecondes
+    const iterations = duration / interval;
+    const increment = finalAmount / iterations;
+
+    let currentAmount = 0;
+
+    const counterInterval = setInterval(() => {
+        currentAmount += increment;
+        element.innerHTML = Math.round(currentAmount);
+
+        if (currentAmount >= finalAmount) {
+            clearInterval(counterInterval);
+        }
+    }, interval);
+}
