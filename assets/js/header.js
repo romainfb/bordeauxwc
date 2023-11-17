@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
   var headerHTML = `
       <div class="w-full bg-[#181823] h-fit shadow-lg  px-8 py-8 flex justify-center"> <!-- Agrandissement du conteneur -->
         <nav>
