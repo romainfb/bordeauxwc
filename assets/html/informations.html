@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/libs/scrollifyReveal.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script>
     tailwind.config = {
       theme: {
@@ -19,35 +21,69 @@
     }
   </script>
 </head>
-<body class="h-screen w-screen bg-mainColor text-white flex flex-col">
-  <script src="C:\dev\Wcbordeaux\bordeauxwc\assets\js\header.js"></script>
 
-  <div class="flex-grow flex justify-center items-center">
-    <div class="text-lg md:text-2xl lg:text-3xl max-w-4xl mx-auto p-5 space-y-6">
-      <h1 class="text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-thirdColor">À propos de BordeauxWC : Un Projet en Versionning Git</h1>
-      <p>
-        Bienvenue sur BordeauxWC, un projet étudiant conçu par Romain F. et Yanis S., deux étudiants en B3 développement à Sup de Vinci Bordeaux. Ce site est le résultat d'un projet dans le cadre de notre cours de versionning, visant à appliquer nos connaissances théoriques dans un contexte pratique.
-      </p>
-      <h2 class="text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">Le Projet BordeauxWC :</h2>
-      <p>
-        BordeauxWC utilise l'API ouverte de Bordeaux Métropole pour répertorier les installations sanitaires publiques de la ville, notamment :
-      </p>
-      <ul class="list-disc pl-5">
-        <li>Le nombre d'urinoirs publics disponibles.</li>
-        <li>Les toilettes automatiques pour une utilisation facile et hygiénique.</li>
-        <li>Les châlets de nécessité traditionnels répartis dans la ville.</li>
-        <li>Des statistiques globales pour une vue d'ensemble de ces installations.</li>
-      </ul>
-      <p>
-        Le but principal de BordeauxWC est d'explorer et de tester l'API de Bordeaux Métropole, en appliquant nos compétences en développement web et en gestion de version. Ce site est donc avant tout un terrain d'apprentissage, nous permettant de mettre en pratique nos connaissances en programmation, en conception web, et en utilisation de données ouvertes.
-      </p>
-      <div class="flex justify-between mt-8 text-xl md:text-2xl lg:text-3xl">
-        <a href="https://github.com/romainfb" class="underline">Romainfb</a>
-        <a href="https://github.com/romainfb/bordeauxwc" class="underline">Projet : bordeauxwc</a>
-        <a href="https://github.com/SaidiYanis" class="underline">SaidiYanis</a>
+<body class="h-screen w-screen bg-mainColor text-white flex flex-col">
+
+  <div class="flex h-full w-full flex-col" id="mainContainer">
+
+      <div class="w-full bg-[#181823] h-fit shadow-lg  px-8 py-8 flex justify-center"> <!-- Agrandissement du conteneur -->
+        <nav>
+          <ul class="flex space-x-6"> <!-- Agrandissement de l'espace entre les éléments -->
+            <li>
+              <a href="./index.html" class="text-xl px-5 py-3 bg-mainColor text-white font-semibold rounded-lg shadow-md transition duration-300 hover:bg-white hover:text-black">Data</a> <!-- Texte plus grand et padding augmenté -->
+            </li>
+            <li>
+              <a href="./informations.html" class="text-xl px-5 py-3 bg-mainColor text-white font-semibold rounded-lg shadow-md transition duration-300 hover:bg-white hover:text-black">Information</a>
+            </li>
+            <li>
+              <a href="./assets/html/autres.html" class="text-xl px-5 py-3 bg-mainColor text-white font-semibold rounded-lg shadow-md transition duration-300 hover:bg-white hover:text-black">Autre</a>
+            </li>
+          </ul>
+        </nav>
       </div>
+
+      <div class="flex h-fit w-full justify-center pt-10 px-20 flex-col">
+
+        <h1 class="title text-white text-9xl font-black uppercase text-center pb-8">Informations</h1>
+        <h2 class="subtitle text-white text-5xl font-bold uppercase text-center">Informations relatives au projet</h1>
+
+          <div class="githubButton flex w-full h-fit justify-center pb-6 pt-10">
+
+            <a href="https://github.com/romainfb/bordeauxwc" class="text-mainColor bg-white px-6 py-2 rounded-xl font-bold text-2xl my-auto hover:scale-105 duration-300"><i class='bx bxl-github font-4xl'></i> Github</a>
+            
+          </div>
+
+      </div>
+
+      <div class="numberDiv flex h-fit px-8 w-full flex-col">
+
+        <div class="flex flex-col h-fit w-full items-center pt-14 pb-6">
+          <span class="text-white text-3xl font-thin uppercase text-center" id="totalData">Bienvenue sur BordeauxWC, un projet étudiant conçu par Romain F. et Yanis S., deux étudiants en B3 développement à Sup de Vinci Bordeaux. Ce site est le résultat d'un projet dans le cadre de notre cours de versionning, visant à appliquer nos connaissances théoriques dans un contexte pratique.<br><br> BordeauxWC utilise l'API ouverte de Bordeaux Métropole pour répertorier les installations sanitaires publiques de la ville.</span>
+        </div>
+
+        <div class="flex flex-row h-fit w-full px-96">
+
+          <div class="flex flex-col w-full h-fit items-center pt-14">
+            <a href="https://github.com/romainfb" class="text-mainColor bg-white px-8 py-3 rounded-xl font-bold text-2xl my-auto hover:scale-105 duration-300"><i class='bx bxl-github font-4xl'></i> romainfb</a>
+          </div>
+
+          <div class="flex flex-col w-full items-center pt-14">
+            <a href="https://github.com/SaidiYanis" class="text-mainColor bg-white px-8 py-3 rounded-xl font-bold text-2xl my-auto hover:scale-105 duration-300"><i class='bx bxl-github font-4xl'></i> SaidiYanis</a>
+          </div>
+
+        </div>
+
+      </div>
+
+
     </div>
-  </div>
+
+  <script>
+    scrollifyReveal.reveal('.title', {delay: 200});
+    scrollifyReveal.reveal('.subtitle', {delay: 300});
+    scrollifyReveal.reveal('.githubButton', {delay: 350});
+    scrollifyReveal.reveal('.numberDiv', {delay: 150});
+  </script>
   
 </body>
 </html>
