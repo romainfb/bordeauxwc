@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./assets/js/fetchOpenData.js"></script>
+  <script src="./assets/js/libs/scrollifyReveal.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script>
     tailwind.config = {
       theme: {
@@ -21,10 +23,62 @@
   </script>
 </head>
 <body class="h-screen w-screen bg-mainColor">
-  <script src="assets/js/header.js"></script>
-  <div class="flex h-full w-full">
+  <div id="mainContainer" class="flex h-full w-full flex-col">
+    <script src="assets/js/header.js"></script>
+
+    <div class="flex h-fit w-full justify-center pt-10 px-20 flex-col">
+
+      <h1 class="title text-white text-9xl font-black uppercase text-center pb-8">Bordeaux WC</h1>
+      <h2 class="subtitle text-white text-5xl font-bold uppercase text-center">Combien il y a t-il de toilettes sur Bordeaux ?</h1>
+
+        <div class="githubButton flex w-full h-fit justify-center pb-6 pt-10">
+
+          <a href="https://github.com/romainfb/bordeauxwc" class="text-mainColor bg-white px-6 py-2 rounded-xl font-bold text-2xl my-auto hover:scale-105 duration-300"><i class='bx bxl-github font-4xl'></i> Github</a>
+          
+        </div>
+
+    </div>
+
+      <div class="numberDiv flex h-fit px-8 w-full flex-col">
+
+        <div class="flex flex-col h-fit w-full items-center pt-14 pb-6">
+          <span class="text-white text-8xl font-black uppercase text-center" id="totalData">0</span>
+          <span class="text-transparent text-4xl font-black uppercase text-center" style="-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white;">Au total</span>
+        </div>
+
+        <div class="flex flex-row h-fit w-full px-48">
+
+          <div class="flex flex-col w-full h-fit items-center pt-14">
+            <span class="text-white text-6xl font-black uppercase text-center" id="urinalData">0</span>
+            <span class="text-transparent text-2xl font-black uppercase text-center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: white;">Urinoirs</span>
+          </div>
+
+          <div class="flex flex-col w-full items-center pt-14">
+            <span class="text-white text-6xl font-black uppercase text-center" id="wcAutoData">0</span>
+            <span class="text-transparent text-2xl font-black uppercase text-center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: white;">WC automatiques</span>
+          </div>
+
+          <div class="flex flex-col w-full items-center pt-14">
+            <span class="text-white text-6xl font-black uppercase text-center" id="cottageData">0</span>
+            <span class="text-transparent text-2xl font-black uppercase text-center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: white;">Châlet de nécessité</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
 
   </div>
+
+  <script>
+    scrollifyReveal.reveal('.title', {delay: 200});
+    scrollifyReveal.reveal('.subtitle', {delay: 300});
+    scrollifyReveal.reveal('.githubButton', {delay: 350});
+    scrollifyReveal.reveal('.numberDiv', {delay: 150});
+  </script>
   
 </body>
 </html>
