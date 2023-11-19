@@ -13,6 +13,8 @@ Project objectives: https://github.com/users/romainfb/projects/3
 
 Project technical requirements: https://github.com/users/romainfb/projects/4
 
+Wiki: https://github.com/romainfb/bordeauxwc/wiki/Workflow
+
 ## Project objectives
 
 | Objective     | Achieved |
